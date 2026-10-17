@@ -1,0 +1,262 @@
+# Git Explained Simply
+
+Git is a tool that tracks changes in your code over time. It lets you save versions of your project, undo mistakes, work with other developers, and manage different versions of your code.
+
+Think of Git as a save system for programming projects.
+
+## 1. Why do we need Git?
+
+Imagine you're building a website. You keep changing the code, and sometimes you break something that was working.
+
+Without Git, you might create folders like these:
+
+- `website_final`
+- `website_final_v2`
+- `website_final_latest`
+- `website_final_really_latest`
+
+With Git, you can track all your changes in one project and return to an earlier version whenever needed.
+
+## 2. How Git works
+
+Working Directory
+
+Write or modify your code
+
+Staging Area
+
+Choose which changes to save
+
+Local Repository
+
+Save a snapshot using a commit
+
+Remote Repository
+
+Share your code using GitHub or another hosting service
+
+The basic workflow is:
+
+1. Edit your code.
+2. Stage the changes you want to save.
+3. Commit those changes to Git.
+4. Push commits to a remote repository when you want to share or back them up.
+
+## 3. Git vs. GitHub
+
+These two are related, but they are not the same.
+
+SaaS Web Design Agency | Ramotion
+
+Git
+
+- A version control tool.
+- Runs on your computer.
+- Tracks changes and manages versions.
+OBOBOB- Works without an internet connection for local operations.
+
+OBOBOBGitHub official Logo PNG Vector (EPS) Free Download
+OBOBOB
+GitHub
+
+OBOBOB- An online platform for hosting Git repositories.
+- Lets developers collaborate on projects.
+- Supports code reviews, pull requests, and issue tracking.
+- Makes it easier to share code with others.
+
+Easy way to remember: Git tracks your code's history; GitHub hosts and shares your code online.
+
+## 4. The most important Git commands
+
+Here are the commands you'll use most often.
+
+| Command | What it does |
+| --- | --- |
+| `git init` | Starts a Git repository in a folder |
+| `git clone URL` | Downloads an existing repository |
+| `git status` | Shows which files have changed |
+| `git add .` | Stages changes in the current directory |
+| `git commit -m "message"` | Saves staged changes as a commit |
+| `git log` | Shows commit history |
+| `git push` | Uploads local commits to a remote |
+| `git pull` | Fetches and integrates remote changes |
+| `git branch` | Lists branches |
+| `git switch -c feature` | Creates and switches to a new branch |
+| `git merge feature` | Merges a branch into the current branch |
+
+## 5. Let's use Git step by step
+
+Suppose you're creating a project called `my-website`.
+
+### Step 1: Create a project folder
+
+Open your terminal and run:
+
+bash
+```
+mkdir my-website
+cd my-website
+```
+
+### Step 2: Initialize Git
+
+bash
+```
+git init
+```
+
+This creates a Git repository in your project folder.
+
+### Step 3: Create a file
+
+Create a file named `index.html` and add:
+
+HTMLWrap linesCopy codePreview
+
+```
+<h1>Hello, World!</h1>
+```
+
+### Step 4: Check the changes
+
+bash
+```
+git status
+```
+
+Git will show that `index.html` is untracked.
+
+### Step 5: Stage the file
+
+bash
+```
+git add index.html
+```
+
+This tells Git you want to include the file in your next commit.
+
+### Step 6: Commit the changes
+
+bash
+```
+git commit -m "Add homepage"
+```
+
+Now Git has saved a snapshot of your project.
+
+### Step 7: Make another change
+
+Update `index.html`:
+
+HTMLWrap linesCopy codePreview
+
+```
+<h1>Welcome to My Website!</h1>
+```
+
+Then save the new version:
+
+bash
+```
+git add index.html
+git commit -m "Update homepage heading"
+```
+
+You now have two commits. You can inspect them using:
+
+bash
+```
+git log --oneline
+```
+
+That's the core of Git: make changes, save snapshots, and track your project's history.
+
+## 6. What are branches in Git?
+
+A branch lets you develop a feature without directly changing the main line of development.
+
+For example, your project might look like this:
+
+main branch
+
+Initial
+
+Homepage
+
+Login
+
+feature branch
+
+Homepage
+
+New feature
+
+Branches let you work on features separately before merging them into the main branch.
+
+Create a new branch:
+
+bash
+```
+git switch -c feature-login
+```
+
+After finishing the feature, switch back to `main` and merge it:
+
+bash
+```
+git switch main
+git merge feature-login
+```
+
+This is especially useful when multiple developers work on the same project.
+
+## 7. What happens when multiple developers use Git?
+
+A common workflow is:
+
+1. A developer clones the project from GitHub.
+2. They create a branch for their task.
+3. They modify the code and commit their changes.
+4. They push the branch to GitHub.
+5. They open a pull request for review.
+6. After approval, the changes are merged into the main branch.
+
+Git helps track the changes, while GitHub provides the collaboration tools.
+
+## 8. Test your understanding
+
+1. Which command saves staged changes as a commit?
+
+git push
+
+git commit
+
+git add
+
+2. Is GitHub the same thing as Git?
+
+Yes
+
+No
+
+3. Which command shows your current file changes and repository status?
+
+git status
+
+git log
+
+git merge
+
+ Try again
+
+## What should you learn next?
+
+A good learning order is:
+
+1. Basic commands: `init`, `status`, `add`, `commit`, and `log`.
+2. GitHub basics: repositories, `clone`, `push`, and `pull`.
+3. Branches and merging.
+4. Merge conflicts and how to resolve them.
+5. Pull requests and team collaboration.
+
+My recommendation: Start by learning `git add`, `git commit`, `git status`, and `git log`. Once you understand those four, the rest of Git becomes much easier.
